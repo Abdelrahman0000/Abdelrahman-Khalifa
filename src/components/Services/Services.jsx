@@ -6,7 +6,7 @@ import Glasses from "../../img/glasses.png";
 import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
-import Resume from './resume.PDF';
+
 
 const Services = () => {
   // context
@@ -31,7 +31,7 @@ const Services = () => {
           <br />
           ispum is simpley dummy text of printing
         </spane>
-        <a href={Resume}>
+        <a href='https://drive.google.com/file/d/1keCxyO_S0sX9ZWcnPMe2STt3R__cgM_6/view?usp=drive_link'>
           <button className="button s-button">Download CV</button>
         </a>
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
