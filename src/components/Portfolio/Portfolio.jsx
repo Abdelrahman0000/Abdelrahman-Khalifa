@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css";
 import Ecommerce1 from "../../img/p1.PNG";
 import Ecommerce from "../../img/p2.PNG";
+import Crm from '../../img/crm.PNG'
+import Port from '../../img/port.PNG'
 import Nft from "../../img/Capture001.PNG";
 import Color from "../../img/p3.PNG";
 import Dashboard from "../../img/p4.PNG";
@@ -35,50 +37,61 @@ const Portfolio = () => {
       >
 
 <SwiperSlide>
-        <a href="https://incredible-tartufo-e1ddc1.netlify.app/" >
+        <a href="https://ecommerc-heceto.vercel.app/" >
           <img src={Ch} alt="" />
 </a>
         </SwiperSlide>
         <SwiperSlide>
-        <a href="https://harmonious-salmiakki-48b50e.netlify.app/" >
+        <a href="https://youtube-clone-three-lyart.vercel.app/" >
           <img src={Youtube} alt="" />
 </a>
         </SwiperSlide>
 
 
         <SwiperSlide>
-        <a href="https://competent-leavitt-d84f6e.netlify.app/" >
+        <a href="https://ecommeerc.vercel.app/" >
           <img src={Ecommerce1} alt="" />
 </a>
         </SwiperSlide>
 
         <SwiperSlide>
-        <a href="https://luminous-cat-d3d661.netlify.app/">
+        <a href="https://crm-react-project.vercel.app/">
+        <img src={Crm} alt="" />
+</a>
+        </SwiperSlide>
+        <SwiperSlide>
+        <a href="https://nft-landing-page-gold.vercel.app/">
         <img src={Nft} alt="" />
 </a>
         </SwiperSlide>
 
+
         <SwiperSlide>
-        <a href="https://sage-semolina-579d98.netlify.app/" >
+        <a href="https://portfolio-pure-js.vercel.app/">
+        <img src={Port} alt="" />
+</a>
+        </SwiperSlide>
+        <SwiperSlide>
+        <a href="https://color-generator-three-xi.vercel.app/" >
         <img src={Color} alt="" />
 </a>
         </SwiperSlide>
-
+{/* 
         <SwiperSlide>
         <a href="https://practical-snyder-dd8a58.netlify.app/" >
         <img src={Ecommerce} alt="" />
 </a>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
 
         <SwiperSlide>
-        <a href="https://bejewelled-pika-c270bb.netlify.app/">
+        <a href="https://dashboard-theta-jet.vercel.app/">
         <img src={Dashboard} alt="" />
 </a>
         </SwiperSlide>
 
         <SwiperSlide>
-        <a href="https://epic-swanson-5ea3da.netlify.app/">
+        <a href="https://jado-landing-page.vercel.app/">
         <img src={Trav} alt="" />
 </a>
         </SwiperSlide>
