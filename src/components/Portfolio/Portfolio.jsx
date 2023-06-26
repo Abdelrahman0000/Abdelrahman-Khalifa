@@ -5,6 +5,7 @@ import "swiper/css";
 import Ecommerce1 from "../../img/p1.PNG";
 import Ecommerce from "../../img/p2.PNG";
 import Crm from '../../img/crm.PNG'
+import NftMarket from '../../img/nft-market.PNG'
 import Port from '../../img/port.PNG'
 import Nft from "../../img/Capture001.PNG";
 import Color from "../../img/p3.PNG";
@@ -36,11 +37,20 @@ const Portfolio = () => {
         className="portfolio-slider"
       >
 
+
+<SwiperSlide>
+        <a href="https://nft-market-five-xi.vercel.app/" >
+          <img src={NftMarket} alt="" />
+</a>
+        </SwiperSlide>
+
+
 <SwiperSlide>
         <a href="https://ecommerc-heceto.vercel.app/" >
           <img src={Ch} alt="" />
 </a>
         </SwiperSlide>
+
         <SwiperSlide>
         <a href="https://youtube-clone-three-lyart.vercel.app/" >
           <img src={Youtube} alt="" />
