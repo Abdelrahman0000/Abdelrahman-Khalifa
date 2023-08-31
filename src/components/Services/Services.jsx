@@ -27,9 +27,20 @@ const Services = () => {
         <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
         <span>services</span>
         <spane>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
+        I offer responsive website design,  
+<br />
+custom web app development, and framework integration.
+
           <br />
-          ispum is simpley dummy text of printing
+          With expertise in React, I create user-friendly sites 
+          <br />
+          that work across devices and browsers. 
+            
+<br />
+I optimize performance, provide code maintenance,
+          <br />
+          and deliver high-quality front-end solutions tailored to your needs.
+    
         </spane>
         <a href='https://drive.google.com/file/d/1keCxyO_S0sX9ZWcnPMe2STt3R__cgM_6/view?usp=drive_link'>
           <button className="button s-button">Download CV</button>
@@ -46,8 +57,8 @@ const Services = () => {
         >
           <Card
             emoji={HeartEmoji}
-            heading={"Design"}
-            detail={"Lorem ispum dummy text are usually use in section where we need some random text"}
+            heading={"Responsive Website Design"}
+            detail={"Visually stunning, responsive web design."}
           />
         </motion.div>
         {/* second card */}
@@ -58,8 +69,8 @@ const Services = () => {
         >
           <Card
             emoji={Glasses}
-            heading={"Developer"}
-            detail={"Html, Css, JavaScript , Bootstrap , Ec6 , Sass , Jquery , React, Nextjs "}
+            heading={"Front-End Developer"}
+            detail={"Html, Css, JavaScript , Bootstrap , Ec6 , Sass , Jquery , React, chart.js  "}
           />
         </motion.div>
         {/* 3rd */}
@@ -70,9 +81,9 @@ const Services = () => {
         >
           <Card
             emoji={Humble}
-            heading={"UI/UX"}
+            heading={"Tailor-made, scalable web apps."}
             detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
+              "Bespoke, scalable web apps."
             }
             color="rgba(252, 166, 31, 0.45)"
           />

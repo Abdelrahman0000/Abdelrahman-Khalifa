@@ -3,7 +3,7 @@ import "./Testimonial.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import { Pagination } from "swiper";
+import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import profilePic1 from "../../img/profile1.jpg";
 import profilePic2 from "../../img/profile2.jpg";

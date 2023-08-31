@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import "./Works.css";
 import Upwork from "../../img/Upwork.png";
 import Fiverr from "../../img/fiverr.png";
-import Amazon from "../../img/amazon.png";
-import Shopify from "../../img/Shopify.png";
-import Facebook from "../../img/Facebook.png";
+import Kamsat from "../../img/5.jpg";
+import Freelancer from "../../img/freelancer.jpg";
+import Mostaql from "../../img/mostaql.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import {Link} from 'react-scroll'
@@ -25,14 +25,15 @@ const Works = () => {
           </span>
           <span>Brands & Clients</span>
           <spane>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
+          I have collaborated with diverse brands and clients,   
             <br />
-            ispum is simpley dummy text of printingLorem ispum is simpley dummy
-            text
+            delivering exceptional front-end solutions.
             <br />
-            y dummy text of printingLorem
+            From startups to established businesses,
             <br />
-            ispum is simpley dummy text of printing
+            I provide innovative designs, seamless user experiences,
+            <br />
+            and pixel-perfect implementations to help them achieve their goals.
           </spane>
           <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
@@ -60,13 +61,13 @@ const Works = () => {
             <img src={Fiverr} alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Amazon} alt="" />
-          </div>{" "}
+            <img src={Kamsat} alt="" />
+          </div>{" "} 
           <div className="w-secCircle">
-            <img src={Shopify} alt="" />
+            <img src={Freelancer} alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Facebook} alt="" />
+            <img src={Mostaql} alt="" />
           </div>
         </motion.div>
         {/* background Circles */}

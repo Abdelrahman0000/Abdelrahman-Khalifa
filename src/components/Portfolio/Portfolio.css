@@ -30,7 +30,10 @@
 }
 
 .portfolio-slider .swiper-slide {
-  width: 20rem;
+  border-radius: 19px;
+  overflow: hidden;
+  width: 19rem;
+  height: 9rem;
 }
 .portfolio img {
   width: 19rem;
@@ -38,5 +41,69 @@
   border-radius: 19px;
   
   height: 9rem;
+}
+
+.portfolio .box-inner{
+  position: absolute;
+  inset: 0;
+width: 19rem;
+height: 9rem;
+background-color: rgba(0, 0, 0, 0.662);
+z-index: 10;
+border-radius: 19px;
+display: none;
+}
+
+.portfolio .my-row{
+  display: flex;
+height: 100%;
+width: 100%;
+align-items: center;
+justify-content: space-around;
+}
+.portfolio .my-row a{
+  border-radius: 7px;
+  text-decoration: none;
+ 
+  padding: 4px 7px 8px;
+  border: 2px aliceblue solid;
+  color: aliceblue;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.portfolio .my-row a svg{
+
+  position: relative;
+  bottom: -5px;
+
+}
+
+.portfolio .swiper-slide:hover  .box-inner {
+display: block;
+}
+
+
+
+
+@media(max-width:500px){
+
+  .portfolio-slider .swiper-slide {
+    border-radius: 19px;
+   
+    width: 14rem;
+    height: 6.5rem;
+  }
+  
+.portfolio img {
+  width: 14rem;
+  height: 6.5rem;
+}
+
+.portfolio .box-inner{
+  width: 14rem;
+  height: 6.5rem;
+}
 }
 

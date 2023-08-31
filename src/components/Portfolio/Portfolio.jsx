@@ -1,7 +1,14 @@
 import React, { useContext } from "react";
 import "./Portfolio.css";
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+
+
 import Ecommerce1 from "../../img/p1.PNG";
 import Ecommerce from "../../img/p2.PNG";
 import Crm from '../../img/crm.PNG'
@@ -20,9 +27,14 @@ import Ch from "../../img/ch.PNG"
 import Cv from "../../img/p10.PNG";
 import Cour from "../../img/p11.PNG";
 import { themeContext } from "../../Context";
+import Gitub from "@iconscout/react-unicons/icons/uil-github";
+import Globe from "@iconscout/react-unicons/icons/uil-globe";
 const Portfolio = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+  const swiperVersion = Swiper.version;
+
+console.log(`Swiper version: ${swiperVersion}`);
   return (
     <div className="portfolio" id="portfolio">
       {/* heading */}
@@ -30,61 +42,159 @@ const Portfolio = () => {
       <span>Portfolio</span>
 
       {/* slider */}
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={3}
+     
+<Swiper
+        effect={'coverflow'}
         grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        
+        modules={[EffectCoverflow, Pagination]}
         className="portfolio-slider"
       >
 
-
 <SwiperSlide>
-        <a href="https://nft-market-five-xi.vercel.app/" >
+      
           <img src={NftMarket} alt="" />
-</a>
+          <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/nft-market">
+                       <Gitub /> Code
+                </a>
+
+          <a href="https://nft-market-five-xi.vercel.app/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
+
+
         </SwiperSlide>
 
 
 <SwiperSlide>
-        <a href="https://ecommerc-heceto.vercel.app/" >
+       
           <img src={Ch} alt="" />
-</a>
+
+
+<div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Ecommerc-heceto">
+                       <Gitub /> Code
+                </a>
+
+          <a href="https://ecommerc-heceto.vercel.app/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
+
         <SwiperSlide>
-        <a href="https://youtube-clone-three-lyart.vercel.app/" >
+       
           <img src={Youtube} alt="" />
-</a>
+
+
+<div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Youtube-clone">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://youtube-clone-three-lyart.vercel.app/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
 
         <SwiperSlide>
-        <a href="https://ecommeerc.vercel.app/" >
+       
           <img src={Ecommerce1} alt="" />
-</a>
+
+          <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Ecommeerc">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://ecommeerc.vercel.app/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-        <a href="https://crm-react-project.vercel.app/">
+       
         <img src={Crm} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Crm-react-project">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://crm-react-project.vercel.app/">
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-        <a href="https://nft-landing-page-gold.vercel.app/">
+        
         <img src={Nft} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Nft-LandingPage">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://nft-landing-page-gold.vercel.app/">
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
 
         <SwiperSlide>
-        <a href="https://portfolio-pure-js.vercel.app/">
+       
         <img src={Port} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Portfolio-pure-js">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://portfolio-pure-js.vercel.app/">
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-        <a href="https://color-generator-three-xi.vercel.app/" >
+       
         <img src={Color} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/color-generator">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://color-generator-three-xi.vercel.app/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 {/* 
         <SwiperSlide>
@@ -95,50 +205,130 @@ const Portfolio = () => {
 
 
         <SwiperSlide>
-        <a href="https://dashboard-theta-jet.vercel.app/">
+        
         <img src={Dashboard} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/dashboard">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://dashboard-theta-jet.vercel.app/">
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-        <a href="https://jado-landing-page.vercel.app/">
+        
         <img src={Trav} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Jado-LandingPage">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://jado-landing-page.vercel.app/">
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-        <a href="https://instgrame.netlify.app/" >
+       
         <img src={Instgrame} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/instegram-clone">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://instgrame.netlify.app/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-        <a href="https://youthful-heisenberg-1b6a3a.netlify.app/" >
+        
         <img src={Netf} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Nitflix">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://youthful-heisenberg-1b6a3a.netlify.app/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-        <a href="https://lighthearted-chebakia-e4bb8e.netlify.app/" class="portfolio-item padd-15">
-        <img src={Phot} alt="" />
-</a>
+               <img src={Phot} alt="" />
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/Photo-Store">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://lighthearted-chebakia-e4bb8e.netlify.app/" class="portfolio-item padd-15">
+
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
 
         <SwiperSlide>
-        <a href="https://kaleidoscopic-twilight-165f13.netlify.app/" class="portfolio-item padd-15">
-    
+         
         <img src={Mov} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/khalifa-portfolio">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://kaleidoscopic-twilight-165f13.netlify.app/" class="portfolio-item padd-15">
+  
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-        <a href="https://rococo-swan-3be39c.netlify.app/" class="portfolio-item padd-15">
-  
+       
         <img src={Cv} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/cv-clone">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://rococo-swan-3be39c.netlify.app/" class="portfolio-item padd-15">
+  
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
       
-    <a href="https://beamish-yeot-407126.netlify.app/" class="portfolio-item padd-15">
+  
         <img src={Cour} alt="" />
-</a>
+        <div className="box-inner">
+                <div className="my-row">
+                <a href="https://github.com/Abdelrahman0000/CoursesWeb">
+                       <Gitub /> Code
+                </a>
+
+                <a href="https://beamish-yeot-407126.netlify.app/" class="portfolio-item padd-15">
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
 
