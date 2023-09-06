@@ -63,8 +63,8 @@ I optimize performance, provide code maintenance,
         </motion.div>
         {/* second card */}
         <motion.div
-          initial={{ left: "-11rem", top: "12rem" }}
-          whileInView={{ left: "-4rem" }}
+          initial={{ left: "-2rem", top: "12rem" }}
+          whileInView={{ left: "-3rem" }}
           transition={transition}
         >
           <Card

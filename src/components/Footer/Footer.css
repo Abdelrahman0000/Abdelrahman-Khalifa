@@ -4,6 +4,7 @@
   margin: -0.5rem -3.5rem;
   position: relative;
   margin-top: -7rem;
+  
 }
 .f-content {
   position: absolute;
@@ -24,5 +25,12 @@
 @media screen and (max-width: 480px){
   .f-content{
     transform: scale(.5);
-  }
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+}
+.footer img{
+  height: 13rem;
+}
 }

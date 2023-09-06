@@ -32,9 +32,7 @@ import Globe from "@iconscout/react-unicons/icons/uil-globe";
 const Portfolio = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
-  const swiperVersion = Swiper.version;
-
-console.log(`Swiper version: ${swiperVersion}`);
+ 
   return (
     <div className="portfolio" id="portfolio">
       {/* heading */}
