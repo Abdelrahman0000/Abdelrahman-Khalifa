@@ -42,7 +42,7 @@ I optimize performance, provide code maintenance,
           and deliver high-quality front-end solutions tailored to your needs.
     
         </spane>
-        <a href='https://drive.google.com/file/d/1keCxyO_S0sX9ZWcnPMe2STt3R__cgM_6/view?usp=drive_link'>
+        <a href='https://drive.google.com/file/d/14ufuU0S7SFtDVvb4RzDPtUejec7OZVCj/view?usp=drivesdk'>
           <button className="button s-button">Download CV</button>
         </a>
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
