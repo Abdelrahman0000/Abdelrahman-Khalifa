@@ -9,23 +9,29 @@ import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 
-import Ecommerce1 from "../../img/p1.PNG";
-import Ecommerce from "../../img/p2.PNG";
-import Crm from '../../img/crm.PNG'
-import NftMarket from '../../img/nft-market.PNG'
-import Port from '../../img/port.PNG'
-import Nft from "../../img/Capture001.PNG";
-import Color from "../../img/p3.PNG";
-import Dashboard from "../../img/p4.PNG";
-import Trav from "../../img/p5.PNG";
-import Instgrame from "../../img/p6.PNG";
-import Netf from "../../img/p7.PNG";
-import Phot from "../../img/p8.PNG";
-import Youtube from '../../img/youtube.PNG'
-import Mov from "../../img/p9.PNG";
-import Ch from "../../img/ch.PNG"
-import Cv from "../../img/p10.PNG";
-import Cour from "../../img/p11.PNG";
+import MOST from "../../img/MOST.webp";
+import Ecommerce1 from "../../img/p1.webp";
+import Ecommerce from "../../img/p2.webp";
+import Crm from '../../img/crm.webp'
+import NftMarket from '../../img/nft-market.webp'
+import Port from '../../img/port.webp'
+import Waqah from '../../img/waqah.webp'
+import BlueDana from '../../img/blueDana.webp'
+import Liwan from '../../img/liwan.webp'
+
+import HHouse from '../../img/h-house.webp'
+import Nft from "../../img/Capture001.webp";
+import Color from "../../img/p3.webp";
+import Dashboard from "../../img/p4.webp";
+import Trav from "../../img/p5.webp";
+import Instgrame from "../../img/p6.webp";
+import Netf from "../../img/p7.webp";
+import Phot from "../../img/p8.webp";
+import Youtube from '../../img/youtube.webp'
+import Mov from "../../img/p9.webp";
+import Ch from "../../img/ch.webp"
+import Cv from "../../img/p10.webp";
+import Cour from "../../img/p11.webp";
 import { themeContext } from "../../Context";
 import Gitub from "@iconscout/react-unicons/icons/uil-github";
 import Globe from "@iconscout/react-unicons/icons/uil-globe";
@@ -58,9 +64,66 @@ const Portfolio = () => {
         className="portfolio-slider"
       >
 
+
+
+  <SwiperSlide>
+       
+          <img src={Liwan} alt="" />
+
+
+<div className="box-inner">
+                <div className="my-row">
+              
+
+                <a href="https://liwan.sa/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
+        </SwiperSlide>
+
+  <SwiperSlide>
+       
+          <img src={BlueDana} alt="" />
+
+
+<div className="box-inner">
+                <div className="my-row">
+              
+
+                <a href="https://bluedana.com/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
+        </SwiperSlide>
+
+
+        <SwiperSlide>
+       
+          <img src={Waqah} alt="" />
+
+
+<div className="box-inner">
+                <div className="my-row">
+              
+
+                <a href="https://waqah.net/en" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
+        </SwiperSlide>
+
+
+
 <SwiperSlide>
       
           <img src={NftMarket} alt="" />
+
+
+
+
           <div className="box-inner">
                 <div className="my-row">
                 <a href="https://github.com/Abdelrahman0000/nft-market">
@@ -74,6 +137,39 @@ const Portfolio = () => {
           </div>
 
 
+        </SwiperSlide>
+
+
+    <SwiperSlide>
+       
+          <img src={MOST} alt="" />
+
+
+<div className="box-inner">
+                <div className="my-row">
+              
+
+                <a href="https://mostforconstruction.com/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
+        </SwiperSlide>
+
+  <SwiperSlide>
+       
+          <img src={HHouse} alt="" />
+
+
+<div className="box-inner">
+                <div className="my-row">
+              
+
+                <a href="https://www.hhouse.com.sy/" >
+                  <Globe /> Demo
+                </a>
+                </div>
+          </div>
         </SwiperSlide>
 
 

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import "./Works.css";
-import Upwork from "../../img/Upwork.png";
-import Fiverr from "../../img/fiverr.png";
-import Kamsat from "../../img/5.jpg";
-import Freelancer from "../../img/freelancer.jpg";
-import Mostaql from "../../img/mostaql.png";
+import Upwork from "../../img/Upwork.webp";
+import Fiverr from "../../img/fiverr.webp";
+import Kamsat from "../../img/5.webp";
+import Freelancer from "../../img/freelancer.webp";
+import Mostaql from "../../img/mostaql.webp";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import {Link} from 'react-scroll'
