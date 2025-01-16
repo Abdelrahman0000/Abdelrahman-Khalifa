@@ -9,7 +9,7 @@ import crown from "../../img/crown.webp";
 import FloatinDiv from "../FloatingDiv/FloatingDiv";
 import Github from "../../img/github.webp";
 import LinkedIn from "../../img/linkedin.webp";
-import Instagram from "../../img/instagram.webp";
+
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
@@ -40,8 +40,8 @@ const Intro = () => {
         {/* social icons */}
         <div className="i-icons">
          <a href="https://github.com/Abdelrahman0000/"> <img src={Github} alt="" /></a>
-         <a href="https://www.linkedin.com/in/abdelrahman-samir-khalifa-05a881216/"> <img src={LinkedIn} alt="" /> </a>
-          <img src={Instagram} alt="" />
+         <a href="https://www.linkedin.com/in/abdelrahman-khalifa-05a881216"> <img src={LinkedIn} alt="" /> </a>
+          
         </div>
       </div>
       {/* right image side */}
