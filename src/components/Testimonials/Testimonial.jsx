@@ -44,6 +44,11 @@ const Testimonial = () => {
         <span>in orbit </span>
         <span>around the work.</span>
       </div>
+      <ul className="stack-cloud">
+        {[...outer, ...inner].map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
       <div className="sky">
         <div className="core">
           <strong>React × TS</strong>

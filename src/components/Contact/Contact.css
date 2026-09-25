@@ -97,4 +97,9 @@
     gap: 2rem;
     height: auto;
   }
+
+  .c-right,
+  .c-right > form {
+    width: 100%;
+  }
 }

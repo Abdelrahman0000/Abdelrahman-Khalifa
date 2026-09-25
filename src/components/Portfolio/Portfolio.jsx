@@ -1,30 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Portfolio.css";
 import { themeContext } from "../../Context";
 import Github from "@iconscout/react-unicons/icons/uil-github";
 import Globe from "@iconscout/react-unicons/icons/uil-globe";
 
-import MOST from "../../img/MOST.webp";
-import Ecommerce1 from "../../img/p1.webp";
-import Crm from "../../img/crm.webp";
-import NftMarket from "../../img/nft-market.webp";
-import Port from "../../img/port.webp";
-import Waqah from "../../img/waqah.webp";
-import BlueDana from "../../img/blueDana.webp";
-import Liwan from "../../img/liwan.webp";
-import HHouse from "../../img/h-house.webp";
-import Nft from "../../img/Capture001.webp";
-import Color from "../../img/p3.webp";
-import Dashboard from "../../img/p4.webp";
-import Trav from "../../img/p5.webp";
-import Instgrame from "../../img/p6.webp";
-import Netf from "../../img/p7.webp";
-import Phot from "../../img/p8.webp";
-import Youtube from "../../img/youtube.webp";
-import Mov from "../../img/p9.webp";
-import Ch from "../../img/ch.webp";
-import Cv from "../../img/p10.webp";
-import Cour from "../../img/p11.webp";
+const shots = require.context("../../img/shots", false, /\.webp$/);
+
+function shot(file) {
+  return shots("./" + file);
+}
+
+function thumb(file) {
+  return shots("./" + file.replace(/\.webp$/, ".thumb.webp"));
+}
 
 const projects = [
   {
@@ -48,7 +36,7 @@ const projects = [
   {
     title: "Bluedana",
     url: "https://bluedana.com/",
-    image: BlueDana,
+    image: "blueDana.webp",
     place: "Live",
     tags: ["React", "React Query", "CSS Modules"],
     blurb:
@@ -57,7 +45,7 @@ const projects = [
   {
     title: "Liwan",
     url: "https://liwan.sa/",
-    image: Liwan,
+    image: "liwan.webp",
     place: "KSA",
     tags: ["Production", "Responsive"],
     blurb: "Production marketing site for Liwan, built to stay sharp on every viewport.",
@@ -65,7 +53,7 @@ const projects = [
   {
     title: "Waqah",
     url: "https://waqah.net/en",
-    image: Waqah,
+    image: "waqah.webp",
     place: "Live",
     tags: ["Bilingual", "UI"],
     blurb: "Public web experience for Waqah, with a clear English storefront and responsive layout.",
@@ -73,7 +61,7 @@ const projects = [
   {
     title: "Most Construction",
     url: "https://mostforconstruction.com/",
-    image: MOST,
+    image: "MOST.webp",
     place: "Live",
     tags: ["Corporate", "Responsive"],
     blurb: "Construction company site with a straightforward, device-ready presentation.",
@@ -81,7 +69,7 @@ const projects = [
   {
     title: "H House",
     url: "https://www.hhouse.com.sy/",
-    image: HHouse,
+    image: "h-house.webp",
     place: "Syria",
     tags: ["Brand", "Responsive"],
     blurb: "Brand website for H House, laid out for phones and desktops.",
@@ -90,7 +78,7 @@ const projects = [
     title: "YouTube Clone",
     url: "https://youtube-clone-three-lyart.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Youtube-clone",
-    image: Youtube,
+    image: "youtube.webp",
     place: "Lab",
     tags: ["React", "RapidAPI", "Custom CSS"],
     blurb:
@@ -100,7 +88,7 @@ const projects = [
     title: "NFT Market",
     url: "https://nft-market-five-xi.vercel.app/",
     code: "https://github.com/Abdelrahman0000/nft-market",
-    image: NftMarket,
+    image: "nft-market.webp",
     place: "Lab",
     tags: ["React", "Marketplace"],
     blurb: "Marketplace interface for browsing and presenting NFT collections.",
@@ -109,7 +97,7 @@ const projects = [
     title: "Heceto Commerce",
     url: "https://ecommerc-heceto.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Ecommerc-heceto",
-    image: Ch,
+    image: "ch.webp",
     place: "Lab",
     tags: ["React", "Shop"],
     blurb: "Commerce storefront with product browsing and a checkout-minded layout.",
@@ -118,7 +106,7 @@ const projects = [
     title: "Ecommerce",
     url: "https://ecommeerc.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Ecommeerc",
-    image: Ecommerce1,
+    image: "p1.webp",
     place: "Lab",
     tags: ["React", "Store"],
     blurb: "Another pass at a product catalog, cart flow, and responsive shop UI.",
@@ -127,7 +115,7 @@ const projects = [
     title: "CRM Dashboard",
     url: "https://crm-react-project.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Crm-react-project",
-    image: Crm,
+    image: "crm.webp",
     place: "Lab",
     tags: ["React", "Dashboard"],
     blurb: "CRM-style dashboard for scanning records, status, and daily operations.",
@@ -136,7 +124,7 @@ const projects = [
     title: "NFT Landing",
     url: "https://nft-landing-page-gold.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Nft-LandingPage",
-    image: Nft,
+    image: "Capture001.webp",
     place: "Lab",
     tags: ["Landing", "Motion"],
     blurb: "Campaign landing page for an NFT drop, built as a single focused scroll.",
@@ -145,7 +133,7 @@ const projects = [
     title: "Pure JS Portfolio",
     url: "https://portfolio-pure-js.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Portfolio-pure-js",
-    image: Port,
+    image: "port.webp",
     place: "Lab",
     tags: ["JavaScript", "UI"],
     blurb: "Earlier portfolio built without a framework, to keep the DOM work honest.",
@@ -154,7 +142,7 @@ const projects = [
     title: "Color Generator",
     url: "https://color-generator-three-xi.vercel.app/",
     code: "https://github.com/Abdelrahman0000/color-generator",
-    image: Color,
+    image: "p3.webp",
     place: "Lab",
     tags: ["Tool", "CSS"],
     blurb: "A small color tool for generating and previewing palettes.",
@@ -163,7 +151,7 @@ const projects = [
     title: "Analytics Dashboard",
     url: "https://dashboard-theta-jet.vercel.app/",
     code: "https://github.com/Abdelrahman0000/dashboard",
-    image: Dashboard,
+    image: "p4.webp",
     place: "Lab",
     tags: ["Charts", "Layout"],
     blurb: "Dashboard layout for metrics, cards, and chart-heavy screens.",
@@ -172,7 +160,7 @@ const projects = [
     title: "Jado Travel",
     url: "https://jado-landing-page.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Jado-LandingPage",
-    image: Trav,
+    image: "p5.webp",
     place: "Lab",
     tags: ["Landing", "Travel"],
     blurb: "Travel landing page with a destination-first hero and section rhythm.",
@@ -181,7 +169,7 @@ const projects = [
     title: "Instagram Clone",
     url: "https://instgrame.netlify.app/",
     code: "https://github.com/Abdelrahman0000/instegram-clone",
-    image: Instgrame,
+    image: "p6.webp",
     place: "Lab",
     tags: ["Feed", "UI"],
     blurb: "Social feed replica focused on posts, chrome, and mobile proportions.",
@@ -190,7 +178,7 @@ const projects = [
     title: "Netflix UI",
     url: "https://youthful-heisenberg-1b6a3a.netlify.app/",
     code: "https://github.com/Abdelrahman0000/Nitflix",
-    image: Netf,
+    image: "p7.webp",
     place: "Lab",
     tags: ["Rows", "Media"],
     blurb: "Streaming homepage study: hero, rows, and poster density.",
@@ -199,7 +187,7 @@ const projects = [
     title: "Photo Store",
     url: "https://lighthearted-chebakia-e4bb8e.netlify.app/",
     code: "https://github.com/Abdelrahman0000/Photo-Store",
-    image: Phot,
+    image: "p8.webp",
     place: "Lab",
     tags: ["Gallery", "Shop"],
     blurb: "Photo storefront with a gallery-led catalog.",
@@ -208,7 +196,7 @@ const projects = [
     title: "Motion Portfolio",
     url: "https://kaleidoscopic-twilight-165f13.netlify.app/",
     code: "https://github.com/Abdelrahman0000/khalifa-portfolio",
-    image: Mov,
+    image: "p9.webp",
     place: "Lab",
     tags: ["Showcase"],
     blurb: "An earlier personal showcase experimenting with layout and motion.",
@@ -217,7 +205,7 @@ const projects = [
     title: "CV Clone",
     url: "https://rococo-swan-3be39c.netlify.app/",
     code: "https://github.com/Abdelrahman0000/cv-clone",
-    image: Cv,
+    image: "p10.webp",
     place: "Lab",
     tags: ["Resume", "Layout"],
     blurb: "Resume layout rebuilt as a web page.",
@@ -226,21 +214,21 @@ const projects = [
     title: "Courses Web",
     url: "https://beamish-yeot-407126.netlify.app/",
     code: "https://github.com/Abdelrahman0000/CoursesWeb",
-    image: Cour,
+    image: "p11.webp",
     place: "Lab",
     tags: ["Education"],
     blurb: "Course catalog page with a clear path into each offering.",
   },
 ];
 
-function Rail({ reverse, active, onPick }) {
-  const loop = [...projects, ...projects];
+function Rail({ reverse, active, onPick, doubled }) {
+  const loop = doubled ? [...projects, ...projects] : projects;
   return (
     <div className={`rail ${reverse ? "rail-b" : "rail-a"}`}>
       <div className="rail-track">
         {loop.map((project, i) => {
           const index = i % projects.length;
-          const ghost = i >= projects.length;
+          const ghost = doubled && i >= projects.length;
           return (
             <button
               type="button"
@@ -251,7 +239,7 @@ function Rail({ reverse, active, onPick }) {
               aria-hidden={ghost ? "true" : undefined}
             >
               {project.image ? (
-                <img src={project.image} alt="" />
+                <img src={thumb(project.image)} alt="" loading="lazy" decoding="async" width="320" height="180" />
               ) : (
                 <span className={`mini-poster tone-${index % 3}`}>{project.poster}</span>
               )}
@@ -270,6 +258,11 @@ function Rail({ reverse, active, onPick }) {
 const Portfolio = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+  const rootRef = useRef(null);
+  const [ready, setReady] = useState(false);
+  const [compact, setCompact] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(max-width: 1045px)").matches
+  );
   const [active, setActive] = useState(0);
   const [locked, setLocked] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -277,12 +270,34 @@ const Portfolio = () => {
   const project = projects[active];
 
   useEffect(() => {
-    if (paused) return undefined;
+    const mq = window.matchMedia("(max-width: 1045px)");
+    const onChange = () => setCompact(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return undefined;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setReady(true);
+        io.disconnect();
+      },
+      { rootMargin: "240px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!ready || paused || compact) return undefined;
     const id = setInterval(() => {
       setActive((n) => (n + 1) % projects.length);
     }, 4500);
     return () => clearInterval(id);
-  }, [paused]);
+  }, [paused, ready, compact]);
 
   const step = (dir) => {
     setLocked(true);
@@ -290,13 +305,15 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="portfolio" id="portfolio">
+    <div className="portfolio" id="portfolio" ref={rootRef}>
       <div className="portfolio-head">
         <span style={{ color: darkMode ? "white" : "" }}>Selected work</span>
         <span>on a live stage</span>
         <p>Production clients first. Labs keep spinning underneath. Click any frame to freeze it.</p>
       </div>
 
+      {ready ? (
+      <>
       <div
         className="stage"
         onMouseEnter={() => setHovering(true)}
@@ -309,7 +326,14 @@ const Portfolio = () => {
               <span>{project.place}</span>
             </div>
             {project.image ? (
-              <img src={project.image} alt={project.title} />
+              <img
+                src={shot(project.image)}
+                alt={project.title}
+                decoding="async"
+                fetchPriority="high"
+                width="960"
+                height="540"
+              />
             ) : (
               <div className={`poster tone-${active % 3}`}>
                 <strong>{project.poster}</strong>
@@ -331,7 +355,7 @@ const Portfolio = () => {
               <span key={tag}>{tag}</span>
             ))}
           </div>
-          <div className={`meter ${paused ? "is-paused" : ""}`} key={`meter-${active}`} />
+          <div className={`meter ${paused || compact ? "is-paused" : ""}`} key={`meter-${active}`} />
           <div className="stage-links">
             <a className="primary" href={project.url} target="_blank" rel="noreferrer">
               <Globe size="1.1rem" /> Live
@@ -346,9 +370,11 @@ const Portfolio = () => {
             <button type="button" onClick={() => step(-1)} aria-label="Previous project">
               ←
             </button>
-            <button type="button" onClick={() => setLocked((p) => !p)}>
-              {locked ? "Play" : "Pause"}
-            </button>
+            {!compact && (
+              <button type="button" onClick={() => setLocked((p) => !p)}>
+                {locked ? "Play" : "Pause"}
+              </button>
+            )}
             <button type="button" onClick={() => step(1)} aria-label="Next project">
               →
             </button>
@@ -356,8 +382,14 @@ const Portfolio = () => {
         </div>
       </div>
 
-      <Rail active={active} onPick={(index) => { setActive(index); setLocked(true); }} />
-      <Rail reverse active={active} onPick={(index) => { setActive(index); setLocked(true); }} />
+      <Rail doubled={!compact} active={active} onPick={(index) => { setActive(index); setLocked(true); }} />
+      {!compact && (
+        <Rail reverse doubled active={active} onPick={(index) => { setActive(index); setLocked(true); }} />
+      )}
+      </>
+      ) : (
+        <div className="portfolio-hold" aria-hidden="true" />
+      )}
     </div>
   );
 };

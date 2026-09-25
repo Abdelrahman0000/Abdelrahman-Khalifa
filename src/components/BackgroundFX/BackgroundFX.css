@@ -23,12 +23,11 @@
 
 .fx-aurora {
   position: absolute;
-  width: 46vw;
-  height: 46vw;
+  width: 42vw;
+  height: 42vw;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.55;
-  mix-blend-mode: screen;
+  filter: blur(48px);
+  opacity: 0.4;
 }
 
 .a1 {
@@ -180,9 +179,9 @@
   opacity: 0.8;
 }
 
-.tone-0 { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
-.tone-1 { background: var(--magenta); box-shadow: 0 0 10px var(--magenta); }
-.tone-2 { background: var(--violet); box-shadow: 0 0 10px var(--violet); }
+.tone-0 { background: var(--cyan); }
+.tone-1 { background: var(--magenta); }
+.tone-2 { background: var(--violet); }
 
 @keyframes gridDrift {
   from { transform: translateY(0); }

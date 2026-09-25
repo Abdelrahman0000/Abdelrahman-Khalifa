@@ -133,10 +133,31 @@
   border-color: rgba(var(--glow-soft), 0.5);
 }
 
-@media (max-width: 700px) {
-  .outer { --r: 8.4rem; }
-  .inner { --r: 4.8rem; }
-  .pill { font-size: 0.68rem; padding: 0.22rem 0.45rem; }
-  .core { width: 7rem; height: 7rem; }
-  .core strong { font-size: 0.95rem; }
+.stack-cloud {
+  display: none;
+}
+
+@media (max-width: 1045px) {
+  .sky {
+    display: none;
+  }
+
+  .stack-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    max-width: 36rem;
+  }
+
+  .stack-cloud li {
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(var(--glow), 0.4);
+    background: rgba(10, 14, 28, 0.88);
+    font-size: 0.88rem;
+  }
 }

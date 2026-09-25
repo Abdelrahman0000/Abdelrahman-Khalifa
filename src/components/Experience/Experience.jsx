@@ -14,7 +14,7 @@ function Stat({ value, suffix, label, note }) {
   useEffect(() => {
     const el = ref.current;
     if (!el || value == null) return undefined;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 1045px)").matches;
     if (reduce) {
       setShown(value);
       return undefined;

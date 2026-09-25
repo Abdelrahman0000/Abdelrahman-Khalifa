@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
-
 :root {
   --glow: 236, 24, 57;
   --glow-soft: 255, 122, 147;
@@ -93,11 +91,15 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   background: #070912;
   color: var(--ink);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .App {
@@ -184,9 +186,65 @@ h1, h2, h3, .n-name, .i-title {
 .float-b { animation: floaty 7s ease-in-out infinite 0.4s; }
 .float-c { animation: floaty 5.4s ease-in-out infinite 0.8s; }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .App {
     padding: 0.5rem 1rem 0;
+  }
+}
+
+/* Phones and tablets: drop effects that repaint every frame. */
+@media screen and (max-width: 1045px) {
+  .fx-grid,
+  .fx-aurora,
+  .fx-scan,
+  .fx-ring,
+  .fx-geo,
+  .fx-orbit,
+  .fx-dot,
+  .blur {
+    display: none !important;
+  }
+
+  .button,
+  .button::after,
+  .i-title,
+  .n-name,
+  .n-name::after,
+  .i-langs span,
+  .i-wa,
+  .live-dot,
+  .card::before,
+  .card > img,
+  .circle::before,
+  .w-mainCircle,
+  .w-secCircle,
+  .w-backCircle,
+  .stage-frame::before,
+  .stage-frame-inner img,
+  .poster,
+  .stage-links a.primary,
+  .core,
+  .ring,
+  .pill-spin,
+  .c-right > form::before,
+  .float-a,
+  .float-b,
+  .float-c,
+  .emoji-float,
+  .floating-div {
+    animation: none !important;
+  }
+
+  .n-wrapper,
+  .card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .awesome > :nth-child(1),
+  .awesome > :nth-child(2) {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+    line-height: 1.1;
   }
 }
 

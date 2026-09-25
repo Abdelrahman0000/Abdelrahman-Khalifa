@@ -1,7 +1,7 @@
 import React from "react";
 import "./BackgroundFX.css";
 
-const dots = Array.from({ length: 26 }, (_, i) => i);
+const dots = Array.from({ length: 8 }, (_, i) => i);
 
 const BackgroundFX = () => {
   return (
@@ -9,8 +9,6 @@ const BackgroundFX = () => {
       <div className="fx-grid" />
       <div className="fx-aurora a1" />
       <div className="fx-aurora a2" />
-      <div className="fx-aurora a3" />
-      <div className="fx-scan" />
       <div className="fx-ring ring-a" />
       <div className="fx-ring ring-b" />
       <div className="fx-ring ring-c" />

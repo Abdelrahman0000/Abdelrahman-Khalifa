@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Intro.css";
 import Vector1 from "../../img/Vector1.webp";
 import Vector2 from "../../img/Vector2.webp";
@@ -10,13 +10,21 @@ import FloatinDiv from "../FloatingDiv/FloatingDiv";
 import Github from "../../img/github.webp";
 import LinkedIn from "../../img/linkedin.webp";
 import { themeContext } from "../../Context";
-import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
 const Intro = () => {
-  const transition = { duration: 2, type: "spring" };
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+  const [showArt, setShowArt] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1046px)").matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1046px)");
+    const onChange = () => setShowArt(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   return (
     <div className="Intro" id="Intro">
@@ -62,7 +70,7 @@ const Intro = () => {
           </a>
         </div>
       </div>
-      <div className="i-right">
+      {showArt && <div className="i-right">
         <span
           className="shape-one"
           aria-hidden="true"
@@ -80,30 +88,13 @@ const Intro = () => {
           }}
         />
         <img src={boy} alt="Abdelrahman Samer Kalefa" />
-        <motion.img
-          className="emoji-float"
-          initial={{ left: "-36%", top: "300px" }}
-          whileInView={{ left: "-24%" }}
-          transition={transition}
-          src={glassesimoji}
-          alt=""
-        />
-        <motion.div
-          initial={{ top: "-4%", left: "74%" }}
-          whileInView={{ left: "68%" }}
-          transition={transition}
-          className="floating-div"
-        >
+        <img className="emoji-float" src={glassesimoji} alt="" />
+        <div className="floating-div">
           <FloatinDiv img={crown} text1="TypeScript" text2="Specialist" />
-        </motion.div>
-        <motion.div
-          initial={{ left: "9rem", top: "18rem" }}
-          whileInView={{ left: "0rem" }}
-          transition={transition}
-          className="floating-div"
-        >
+        </div>
+        <div className="floating-div">
           <FloatinDiv img={thumbup} text1="React" text2="Developer" />
-        </motion.div>
+        </div>
         <div className="blur" style={{ background: "#ff7a93" }}></div>
         <div
           className="blur"
@@ -115,7 +106,7 @@ const Intro = () => {
             left: "-9rem",
           }}
         ></div>
-      </div>
+      </div>}
     </div>
   );
 };

@@ -59,8 +59,8 @@
 }
 
 .belt {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  flex: 1 0 100%;
+  width: 100%;
   overflow: hidden;
   margin-top: 2.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);

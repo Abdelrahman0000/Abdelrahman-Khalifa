@@ -5,16 +5,10 @@ import HeartEmoji from "../../img/heartemoji.webp";
 import Glasses from "../../img/glasses.webp";
 import Humble from "../../img/humble.webp";
 import { themeContext } from "../../Context";
-import { motion } from "framer-motion";
 
 const Services = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
-
-  const transition = {
-    duration: 1,
-    type: "spring",
-  };
 
   return (
     <div className="services" id="services">
@@ -34,42 +28,27 @@ const Services = () => {
         <div className="blur s-blur1" style={{ background: "#ec1839" }}></div>
       </div>
       <div className="cards">
-        <motion.div
-          className="float-a"
-          initial={{ left: "25rem" }}
-          whileInView={{ left: "14rem" }}
-          transition={transition}
-        >
+        <div className="float-a">
           <Card
             emoji={HeartEmoji}
             heading={"Interface engineering"}
             detail={"Responsive, cross-browser React and TypeScript UI with a reusable component library."}
           />
-        </motion.div>
-        <motion.div
-          className="float-b"
-          initial={{ left: "-2rem", top: "12rem" }}
-          whileInView={{ left: "-3rem" }}
-          transition={transition}
-        >
+        </div>
+        <div className="float-b">
           <Card
             emoji={Glasses}
             heading={"Server state"}
             detail={"React Query and REST: fetching, caching, and screens that stay in sync with the API."}
           />
-        </motion.div>
-        <motion.div
-          className="float-c"
-          initial={{ top: "19rem", left: "25rem" }}
-          whileInView={{ left: "12rem" }}
-          transition={transition}
-        >
+        </div>
+        <div className="float-c">
           <Card
             emoji={Humble}
             heading={"Speed & access"}
             detail={"Performance, accessibility, SEO-friendly structure, and mobile-first layouts."}
           />
-        </motion.div>
+        </div>
         <div className="blur s-blur2" style={{ background: "var(--purple)" }}></div>
       </div>
     </div>

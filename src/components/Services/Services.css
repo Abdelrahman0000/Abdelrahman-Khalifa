@@ -77,7 +77,7 @@
   }
   .card {
     width: 100% !important;
-    max-width: 22rem;
+    max-width: none;
   }
 }
 
