@@ -1,10 +1,18 @@
 .n-wrapper {
-  height: 10vh;
+  height: auto;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin: -0.5rem -3.5rem 2rem;
+  padding: 0.85rem 3.5rem;
+  position: sticky;
   top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  background: #14080d;
+  border-bottom: 1px solid rgba(var(--glow), 0.28);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 }
+
 .n-left {
   flex: 1;
   align-items: center;
@@ -14,28 +22,73 @@
 }
 
 .n-name {
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(90deg, var(--cyan), var(--violet), var(--magenta));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 6s linear infinite;
 }
+
+.n-name::after {
+  content: "_";
+  color: var(--cyan);
+  -webkit-text-fill-color: var(--cyan);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 .n-right {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .n-list {
   flex: 10;
 }
+
 .n-list > ul {
   display: flex;
   gap: 2rem;
   margin-right: 4rem;
 }
 
+.n-list a {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.n-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  transition: transform 0.3s ease;
+}
+
+.n-list a:hover::after,
+.n-list a.active::after {
+  transform: scaleX(1);
+}
+
 .n-list > ul :hover {
-  color: var(--orange);
+  color: var(--cyan);
   cursor: pointer;
 }
 
@@ -46,5 +99,14 @@
 @media screen and (max-width: 1079px) {
   .n-list {
     display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .n-wrapper {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

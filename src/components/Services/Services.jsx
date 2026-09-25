@@ -7,13 +7,10 @@ import Humble from "../../img/humble.webp";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 
-
 const Services = () => {
-  // context
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
-  // transition
   const transition = {
     duration: 1,
     type: "spring",
@@ -21,77 +18,59 @@ const Services = () => {
 
   return (
     <div className="services" id="services">
-      {/* left side */}
       <div className="awesome">
-        {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
-        <span>services</span>
-        <spane>
-        I offer responsive website design,  
-<br />
-custom web app development, and framework integration.
-
+        <span style={{ color: darkMode ? "white" : "" }}>What I</span>
+        <span>actually ship</span>
+        <span>
+          Pixel-accurate interfaces, component systems, and API-driven screens
+          that stay fast on real devices.
           <br />
-          With expertise in React, I create user-friendly sites 
-          <br />
-          that work across devices and browsers. 
-            
-<br />
-I optimize performance, provide code maintenance,
-          <br />
-          and deliver high-quality front-end solutions tailored to your needs.
-    
-        </spane>
-        <a href='https://drive.google.com/file/d/14ufuU0S7SFtDVvb4RzDPtUejec7OZVCj/view?usp=drivesdk'>
+          React, TypeScript, React Query, Redux, Tailwind, and SCSS — wired to
+          REST, reviewed in Git, and released on schedule.
+        </span>
+        <a href="/Abdelrahman-Kalefa-CV.pdf" download>
           <button className="button s-button">Download CV</button>
         </a>
-        <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
+        <div className="blur s-blur1" style={{ background: "#ec1839" }}></div>
       </div>
-      {/* right */}
       <div className="cards">
-        {/* first card */}
         <motion.div
+          className="float-a"
           initial={{ left: "25rem" }}
           whileInView={{ left: "14rem" }}
           transition={transition}
         >
           <Card
             emoji={HeartEmoji}
-            heading={"Responsive Website Design"}
-            detail={"Visually stunning, responsive web design."}
+            heading={"Interface engineering"}
+            detail={"Responsive, cross-browser React and TypeScript UI with a reusable component library."}
           />
         </motion.div>
-        {/* second card */}
         <motion.div
+          className="float-b"
           initial={{ left: "-2rem", top: "12rem" }}
           whileInView={{ left: "-3rem" }}
           transition={transition}
         >
           <Card
             emoji={Glasses}
-            heading={"Front-End Developer"}
-            detail={"Html, Css, JavaScript , Bootstrap , Ec6 , Sass , Jquery , React, chart.js  "}
+            heading={"Server state"}
+            detail={"React Query and REST: fetching, caching, and screens that stay in sync with the API."}
           />
         </motion.div>
-        {/* 3rd */}
         <motion.div
+          className="float-c"
           initial={{ top: "19rem", left: "25rem" }}
           whileInView={{ left: "12rem" }}
           transition={transition}
         >
           <Card
             emoji={Humble}
-            heading={"Tailor-made, scalable web apps."}
-            detail={
-              "Bespoke, scalable web apps."
-            }
-            color="rgba(252, 166, 31, 0.45)"
+            heading={"Speed & access"}
+            detail={"Performance, accessibility, SEO-friendly structure, and mobile-first layouts."}
           />
         </motion.div>
-        <div
-          className="blur s-blur2"
-          style={{ background: "var(--purple)" }}
-        ></div>
+        <div className="blur s-blur2" style={{ background: "var(--purple)" }}></div>
       </div>
     </div>
   );

@@ -1,23 +1,35 @@
 import React from "react";
 import "./Footer.css";
-import Wave from "../../img/wave.webp";
-import Insta from "@iconscout/react-unicons/icons/uil-instagram";
-import Facebook from "@iconscout/react-unicons/icons/uil-facebook";
 import Gitub from "@iconscout/react-unicons/icons/uil-github";
+import Linkedin from "@iconscout/react-unicons/icons/uil-linkedin";
+import Whatsapp from "@iconscout/react-unicons/icons/uil-whatsapp";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <img src={Wave} alt="" style={{ width: "100%" }} />
       <div className="f-content">
-        
-     <p style={{lineHeight:'30px'}}>   <span> Email: khlyftbdh5@gmail.com</span> || <span> WhatsApp: +201098253130</span></p>
+        <p>
+          <a href="mailto:khlyftbdh5@gmail.com">khlyftbdh5@gmail.com</a>
+          <span> · </span>
+          <a href="https://wa.me/201098253130">+20 109 825 3130</a>
+          <span> · UAE</span>
+        </p>
         <div className="f-icons">
-          <Insta color="white"  size={"3rem"} />
-          <Facebook color="white" size={"3rem"} />
-          <Gitub color="white" size={"3rem"} />
+          <a href="https://github.com/Abdelrahman0000/" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <Gitub color="white" size={"3rem"} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/abdelrahman-samir-khalifa-05a881216/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <Linkedin color="white" size={"3rem"} />
+          </a>
+          <a href="https://wa.me/201098253130" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <Whatsapp color="white" size={"3rem"} />
+          </a>
         </div>
-       
       </div>
     </div>
   );

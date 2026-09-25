@@ -1,0 +1,206 @@
+.fx {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(var(--glow), 0.28), transparent 55%),
+    radial-gradient(900px 600px at 110% 10%, rgba(var(--glow-soft), 0.18), transparent 50%),
+    #14080d;
+}
+
+.fx-grid {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 40%, #000 20%, transparent 75%);
+  animation: gridDrift 28s linear infinite;
+}
+
+.fx-aurora {
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+.a1 {
+  background: var(--violet);
+  top: -12vw;
+  left: -8vw;
+  animation: drift 18s ease-in-out infinite;
+}
+
+.a2 {
+  background: var(--cyan);
+  right: -12vw;
+  top: 20vh;
+  animation: drift 22s ease-in-out infinite reverse;
+}
+
+.a3 {
+  background: var(--magenta);
+  left: 30vw;
+  bottom: -18vw;
+  width: 38vw;
+  height: 38vw;
+  animation: drift 26s ease-in-out infinite 1s;
+}
+
+.fx-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 18vh;
+  background: linear-gradient(180deg, transparent, rgba(var(--glow), 0.08), transparent);
+  animation: scan 9s linear infinite;
+}
+
+.fx-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(var(--glow), 0.45);
+  animation: spin 24s linear infinite;
+}
+
+.fx-ring::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 16px var(--cyan);
+  top: -5px;
+  left: 50%;
+}
+
+.ring-a {
+  width: 280px;
+  height: 280px;
+  top: 12vh;
+  right: 6vw;
+}
+
+.ring-b {
+  width: 160px;
+  height: 160px;
+  top: 18vh;
+  right: 10vw;
+  border-color: rgba(var(--glow-soft), 0.55);
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+.ring-b::after {
+  background: var(--magenta);
+  box-shadow: 0 0 16px var(--magenta);
+}
+
+.ring-c {
+  width: 420px;
+  height: 420px;
+  bottom: -80px;
+  left: -120px;
+  animation-duration: 36s;
+}
+
+.fx-geo {
+  position: absolute;
+  border: 1px solid rgba(var(--glow), 0.55);
+  animation: spin 16s linear infinite, floaty 6s ease-in-out infinite;
+}
+
+.g1 {
+  width: 64px;
+  height: 64px;
+  top: 8%;
+  left: 46%;
+  opacity: 0.55;
+}
+
+.g2 {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  top: 68%;
+  right: 14%;
+  border-color: rgba(var(--glow-soft), 0.7);
+  animation-duration: 11s, 5s;
+}
+
+.g3 {
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 28px solid rgba(139, 108, 255, 0.85);
+  top: 46%;
+  left: 78%;
+}
+
+.fx-orbit {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+}
+
+.fx-orbit i {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 12px var(--cyan);
+}
+
+.fx-orbit i:nth-child(1) { top: 0; left: 50%; }
+.fx-orbit i:nth-child(2) { bottom: 12%; left: 6%; background: var(--magenta); }
+.fx-orbit i:nth-child(3) { bottom: 12%; right: 6%; background: var(--violet); }
+
+.orbit-tr { top: 8vh; right: 18vw; }
+.orbit-bl { bottom: 12vh; left: 8vw; width: 90px; height: 90px; animation-duration: 7s; animation-direction: reverse; }
+
+.fx-dot {
+  position: absolute;
+  border-radius: 50%;
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0.8;
+}
+
+.tone-0 { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+.tone-1 { background: var(--magenta); box-shadow: 0 0 10px var(--magenta); }
+.tone-2 { background: var(--violet); box-shadow: 0 0 10px var(--violet); }
+
+@keyframes gridDrift {
+  from { transform: translateY(0); }
+  to { transform: translateY(72px); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(6vw, 4vh, 0) scale(1.15); }
+}
+
+@keyframes scan {
+  from { top: -20vh; }
+  to { top: 110vh; }
+}
+
+@keyframes rise {
+  0% { transform: translateY(20px); opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}

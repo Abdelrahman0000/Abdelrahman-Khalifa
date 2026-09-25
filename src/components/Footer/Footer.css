@@ -1,36 +1,71 @@
 .footer {
-  display: flex;
-  align-items: center;
-  margin: -0.5rem -3.5rem;
+  margin: 5rem -3.5rem 0;
+  padding: 2.8rem 3.5rem 2rem;
   position: relative;
-  margin-top: -7rem;
-  
+  background:
+    radial-gradient(520px 160px at 50% 0%, rgba(var(--glow), 0.38), transparent 72%),
+    linear-gradient(180deg, #2a0c14 0%, #14080d 100%);
+  border-top: 1px solid rgba(var(--glow), 0.35);
+  overflow: hidden;
 }
-.f-content {
+
+.footer::before {
+  content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--violet), var(--cyan), var(--magenta), transparent);
+}
+
+.f-content {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 5rem;
-  gap: 4rem;
-  color: white;
-}
-.f-icons {
-  display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
+  color: var(--ink);
 }
 
-@media screen and (max-width: 480px){
-  .f-content{
-    transform: scale(.5);
-    -webkit-transform: scale(.5);
-    -moz-transform: scale(.5);
-    -ms-transform: scale(.5);
-    -o-transform: scale(.5);
+.f-content a {
+  color: var(--ink);
+  text-decoration: none;
 }
-.footer img{
-  height: 13rem;
+
+.f-content p {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
 }
+
+.f-content p a {
+  color: var(--ink);
+}
+
+.f-icons {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.f-icons a {
+  display: flex;
+  color: var(--cyan);
+  transition: transform 0.35s ease;
+}
+
+.f-icons a:hover {
+  transform: rotate(-14deg) scale(1.12);
+  filter: drop-shadow(0 0 12px var(--cyan));
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

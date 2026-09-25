@@ -1,20 +1,22 @@
 .floatingDiv {
   justify-content: space-around;
-  background: white;
-  box-shadow: var(--boxShadow);
+  background: rgba(8, 12, 24, 0.82);
+  border: 1px solid rgba(var(--glow), 0.4);
+  box-shadow: 0 12px 40px rgba(var(--glow), 0.15);
   border-radius: 17px;
   display: flex;
   align-items: center;
   padding: 0px 28px 0px 0px;
   height: 4.5rem;
+  backdrop-filter: blur(8px);
 }
+
 .floatingDiv > img {
   transform: scale(0.4);
 }
-.floatingDiv > span {
-  font-family: sans-serif;
-  font-size: 16px;
-  /* yahan ye color add kia hy bad mein dark mode k waqt */
-  color: black;
-}
 
+.floatingDiv > span {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  color: #eef4ff;
+}
