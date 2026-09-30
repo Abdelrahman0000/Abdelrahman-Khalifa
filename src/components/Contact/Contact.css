@@ -30,6 +30,9 @@
   justify-content: center;
   position: relative;
   flex: 1;
+  width: 100%;
+  max-width: 100%;
+  overflow: clip;
 }
 
 .c-right > form {
@@ -43,6 +46,8 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   width: min(26rem, 100%);
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .c-right > form::before {
@@ -50,7 +55,7 @@
   position: absolute;
   inset: -40%;
   background: conic-gradient(from 90deg, transparent, rgba(var(--glow), 0.35), transparent 40%);
-  animation: spin 8s linear infinite;
+  animation: none;
   z-index: -1;
 }
 

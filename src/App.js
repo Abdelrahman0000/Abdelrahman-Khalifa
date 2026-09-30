@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import BackgroundFX from "./components/BackgroundFX/BackgroundFX";
 import { useContext } from "react";
 import { themeContext } from "./Context";
+import "./effects.css";
 
 function App() {
   const theme = useContext(themeContext);
@@ -20,14 +21,30 @@ function App() {
       <BackgroundFX />
       <div className="app-content">
         <Navbar />
-        <Intro />
-        <Services />
-        <Experience />
-        <Works />
-        <Portfolio />
-        <Testimonial />
-        <Contact />
-        <Footer />
+        <section className="scene" data-scene="hero">
+          <Intro />
+        </section>
+        <section className="scene" data-scene="panel">
+          <Services />
+        </section>
+        <section className="scene" data-scene="panel">
+          <Experience />
+        </section>
+        <section className="scene" data-scene="panel">
+          <Works />
+        </section>
+        <section className="scene" data-scene="panel">
+          <Portfolio />
+        </section>
+        <section className="scene" data-scene="panel">
+          <Testimonial />
+        </section>
+        <section className="scene" data-scene="panel">
+          <Contact />
+        </section>
+        <section className="scene" data-scene="panel">
+          <Footer />
+        </section>
       </div>
     </div>
   );

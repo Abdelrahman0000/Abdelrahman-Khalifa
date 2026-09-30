@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./Intro.css";
 import Vector1 from "../../img/Vector1.webp";
 import Vector2 from "../../img/Vector2.webp";
@@ -15,16 +15,6 @@ import { Link } from "react-scroll";
 const Intro = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
-  const [showArt, setShowArt] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1046px)").matches
-  );
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1046px)");
-    const onChange = () => setShowArt(mq.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
 
   return (
     <div className="Intro" id="Intro">
@@ -70,9 +60,10 @@ const Intro = () => {
           </a>
         </div>
       </div>
-      {showArt && <div className="i-right">
+      <div className="i-right">
         <span
           className="shape-one"
+          data-depth="0.14"
           aria-hidden="true"
           style={{
             WebkitMaskImage: `url(${Vector1})`,
@@ -81,32 +72,33 @@ const Intro = () => {
         />
         <span
           className="shape-two"
+          data-depth="0.07"
           aria-hidden="true"
           style={{
             WebkitMaskImage: `url(${Vector2})`,
             maskImage: `url(${Vector2})`,
           }}
         />
-        <img src={boy} alt="Abdelrahman Samer Kalefa" />
-        <img className="emoji-float" src={glassesimoji} alt="" />
-        <div className="floating-div">
+        <img src={boy} alt="Abdelrahman Samer Kalefa" data-depth="-0.16" />
+        <img className="emoji-float" src={glassesimoji} alt="" data-depth="-0.3" />
+        <div className="floating-div" data-depth="-0.22">
           <FloatinDiv img={crown} text1="TypeScript" text2="Specialist" />
         </div>
-        <div className="floating-div">
+        <div className="floating-div" data-depth="-0.34">
           <FloatinDiv img={thumbup} text1="React" text2="Developer" />
         </div>
-        <div className="blur" style={{ background: "#ff7a93" }}></div>
+        <div className="blur tone-gold" data-depth="0.08"></div>
         <div
-          className="blur"
+          className="blur tone-teal"
+          data-depth="0.05"
           style={{
-            background: "#ec1839",
             top: "17rem",
             width: "21rem",
             height: "11rem",
             left: "-9rem",
           }}
         ></div>
-      </div>}
+      </div>
     </div>
   );
 };

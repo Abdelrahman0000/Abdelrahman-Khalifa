@@ -55,7 +55,7 @@ const Works = () => {
           <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
           </Link>
-          <div className="blur s-blur1" style={{ background: "#ff7a93" }}></div>
+          <div className="blur s-blur1 tone-teal"></div>
         </div>
         <ol className="timeline">
           {jobs.map((job) => (

@@ -25,7 +25,7 @@ const Services = () => {
         <a href="/Abdelrahman-Kalefa-CV.pdf" download>
           <button className="button s-button">Download CV</button>
         </a>
-        <div className="blur s-blur1" style={{ background: "#ec1839" }}></div>
+        <div className="blur s-blur1 tone-gold"></div>
       </div>
       <div className="cards">
         <div className="float-a">

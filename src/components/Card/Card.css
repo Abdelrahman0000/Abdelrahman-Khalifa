@@ -7,13 +7,12 @@
   gap: 0.7rem;
   align-items: center;
   text-align: center;
-  background: rgba(10, 14, 28, 0.72);
+  background: var(--surface);
   border: 1px solid rgba(var(--glow), 0.35);
-  box-shadow: 0 0 0 1px rgba(139, 108, 255, 0.2), var(--boxShadow);
+  box-shadow: 11px 11px 22px var(--shadow-dark), -9px -9px 18px var(--shadow-light);
   border-radius: 22px;
   padding: 1.2rem 1.1rem 1.4rem;
-  backdrop-filter: blur(10px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card::before {
@@ -24,7 +23,7 @@
   padding: 1px;
   background: linear-gradient(130deg, var(--violet), var(--cyan), var(--magenta));
   background-size: 200% 200%;
-  animation: gradientShift 5s linear infinite;
+  animation: none;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -51,7 +50,6 @@
 .card > img {
   transform: scale(0.6);
   margin-bottom: -1.4rem;
-  animation: wiggleCard 3.4s ease-in-out infinite;
 }
 
 @keyframes wiggleCard {

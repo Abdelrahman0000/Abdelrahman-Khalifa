@@ -1,10 +1,11 @@
 .footer {
-  margin: 5rem -3.5rem 0;
-  padding: 2.8rem 3.5rem 2rem;
+  margin: 4rem 0 1.2rem;
+  padding: 2.4rem 1.5rem 2rem;
+  border-radius: 28px;
   position: relative;
   background:
-    radial-gradient(520px 160px at 50% 0%, rgba(var(--glow), 0.38), transparent 72%),
-    linear-gradient(180deg, #2a0c14 0%, #14080d 100%);
+    radial-gradient(520px 160px at 50% 0%, rgba(var(--violet-rgb), 0.35), transparent 72%),
+    linear-gradient(180deg, #242838 0%, var(--bg) 100%);
   border-top: 1px solid rgba(var(--glow), 0.35);
   overflow: hidden;
 }
@@ -61,11 +62,10 @@
   filter: drop-shadow(0 0 12px var(--cyan));
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1045px) {
   .footer {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: 3rem 0 1rem;
+    padding: 2rem 1rem 1.6rem;
+    border-radius: 22px;
   }
 }

@@ -48,8 +48,7 @@
   z-index: 3;
   background: radial-gradient(circle at 40% 30%, rgba(var(--glow), 0.25), rgba(8, 10, 22, 0.95) 70%);
   border: 1px solid rgba(var(--glow), 0.45);
-  box-shadow: 0 0 40px rgba(139, 108, 255, 0.35), inset 0 0 24px rgba(var(--glow), 0.15);
-  animation: floaty 5s ease-in-out infinite;
+  box-shadow: 11px 11px 22px var(--shadow-dark), -9px -9px 18px var(--shadow-light);
 }
 
 .core strong {
@@ -65,7 +64,6 @@
 .ring {
   position: absolute;
   inset: 0;
-  animation: spin var(--spin) linear infinite;
 }
 
 .ring::before {
@@ -104,15 +102,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  animation-name: spin;
-  animation-duration: var(--spin);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: reverse;
-}
-
-.inner .pill-spin {
-  animation-direction: normal;
 }
 
 .pill {

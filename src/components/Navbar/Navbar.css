@@ -1,24 +1,24 @@
 .n-wrapper {
   height: auto;
-  display: flex;
-  justify-content: space-between;
-  margin: -0.5rem -3.5rem 2rem;
-  padding: 0.85rem 3.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0 0 2rem;
+  padding: 0.7rem 1.1rem;
   position: sticky;
-  top: 0;
+  top: 0.75rem;
   z-index: 100;
-  backdrop-filter: blur(16px);
-  background: #14080d;
-  border-bottom: 1px solid rgba(var(--glow), 0.28);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  border-radius: 22px;
+  background: var(--surface);
+  border: none;
 }
 
 .n-left {
-  flex: 1;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .n-name {
@@ -30,7 +30,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: gradientShift 6s linear infinite;
 }
 
 .n-name::after {
@@ -45,21 +44,19 @@
 }
 
 .n-right {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   font-weight: 500;
 }
 
-.n-list {
-  flex: 10;
-}
-
 .n-list > ul {
   display: flex;
-  gap: 2rem;
-  margin-right: 4rem;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .n-list a {
@@ -67,6 +64,11 @@
   cursor: pointer;
   text-decoration: none;
   color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--surface);
 }
 
 .n-list a::after {
@@ -93,7 +95,7 @@
 }
 
 .n-button {
-  flex: 2;
+  flex: none;
 }
 
 .n-burger {
@@ -126,7 +128,8 @@
 
 @media screen and (max-width: 1079px) {
   .n-wrapper {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr auto;
+    top: 0.4rem;
   }
 
   .n-list,
@@ -140,10 +143,10 @@
   }
 
   .n-drawer {
-    flex: 1 0 100%;
+    grid-column: 1 / -1;
     flex-direction: column;
     gap: 0.15rem;
-    padding: 0.35rem 0 0.7rem;
+    padding: 0.35rem 0.2rem 0.7rem;
   }
 
   .n-drawer a {
@@ -160,11 +163,9 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1045px) {
   .n-wrapper {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: 0 0 1.2rem;
+    padding: 0.55rem 0.7rem;
   }
 }

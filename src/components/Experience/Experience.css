@@ -20,7 +20,7 @@
 .circle {
   width: 5.2rem;
   height: 5.2rem;
-  background: #0e1324;
+  background: var(--surface);
   border-radius: 100%;
   position: relative;
   display: flex;
@@ -44,7 +44,6 @@
   right: -7px;
   position: absolute;
   z-index: -1;
-  animation: spin 3.5s linear infinite;
 }
 
 .achievement span:nth-of-type(1) {

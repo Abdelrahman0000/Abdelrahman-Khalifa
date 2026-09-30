@@ -1,0 +1,83 @@
+/* Raised shadow only. No inset, and no animated box-shadow (that was repainting the whole page). */
+.App .card,
+.App .timeline li,
+.App .c-right > form,
+.App .rail-card,
+.App .pill,
+.App .circle,
+.App .floatingDiv,
+.App .i-icons a,
+.App .i-kicker,
+.App .stage-nav button,
+.App .n-burger,
+.App .tags span,
+.App .chips span,
+.App .stack-cloud li,
+.App .c-button,
+.App .w-secCircle,
+.App .i-langs span,
+.App .button,
+.App .c-right .user,
+.App .stage-links a,
+.App .n-wrapper,
+.App .n-list a,
+.App .footer,
+.App .toggle,
+.App .stage-frame,
+.App .f-icons a,
+.App .hud span {
+  box-shadow:
+    10px 10px 20px var(--shadow-dark),
+    -7px -7px 16px var(--shadow-light);
+}
+
+.App .c-right .user {
+  background: var(--bg);
+  border-color: transparent;
+}
+
+.App .w-secCircle {
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.App .card:hover,
+.App .button:hover,
+.App .rail-card:hover,
+.App .timeline li:hover,
+.App .floatingDiv:hover,
+.App .i-icons a:hover,
+.App .stage-nav button:hover,
+.App .c-button:hover {
+  box-shadow:
+    14px 14px 26px var(--shadow-dark),
+    -8px -8px 18px var(--shadow-light);
+}
+
+.scene {
+  max-width: 100%;
+}
+
+@keyframes sceneIn {
+  from {
+    transform: perspective(1100px) rotateX(4deg) translateY(22px);
+    opacity: 0.82;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes sceneRise {
+  from { opacity: 0.65; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

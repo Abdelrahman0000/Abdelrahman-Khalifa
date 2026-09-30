@@ -3,15 +3,23 @@ import "./Portfolio.css";
 import { themeContext } from "../../Context";
 import Github from "@iconscout/react-unicons/icons/uil-github";
 import Globe from "@iconscout/react-unicons/icons/uil-globe";
+import { shotThumbs } from "../../img/shotThumbs";
 
-const shots = require.context("../../img/shots", false, /\.webp$/);
+const shots = require.context("../../img/shots", false, /^\.\/(?!.*thumb).+\.webp$/);
 
 function shot(file) {
   return shots("./" + file);
 }
 
 function thumb(file) {
-  return shots("./" + file.replace(/\.webp$/, ".thumb.webp"));
+  return shotThumbs[file.replace(/\.webp$/, ".thumb.webp")];
+}
+
+function warm(src) {
+  const img = new Image();
+  img.decoding = "async";
+  img.src = src;
+  if (img.decode) img.decode().catch(() => {});
 }
 
 const projects = [
@@ -221,6 +229,32 @@ const projects = [
   },
 ];
 
+function StagePhoto({ file, title }) {
+  const small = thumb(file);
+  const full = shot(file);
+  const [src, setSrc] = useState(small);
+
+  useEffect(() => {
+    let cancel = false;
+    setSrc(small);
+    const img = new Image();
+    img.decoding = "async";
+    img.src = full;
+    const apply = () => {
+      if (!cancel) setSrc(full);
+    };
+    img.onload = apply;
+    if (img.decode) img.decode().then(apply).catch(() => {});
+    return () => {
+      cancel = true;
+    };
+  }, [small, full]);
+
+  return (
+    <img src={src} alt={title} decoding="async" fetchPriority="high" width="960" height="540" />
+  );
+}
+
 function Rail({ reverse, active, onPick, doubled }) {
   const loop = doubled ? [...projects, ...projects] : projects;
   return (
@@ -239,7 +273,7 @@ function Rail({ reverse, active, onPick, doubled }) {
               aria-hidden={ghost ? "true" : undefined}
             >
               {project.image ? (
-                <img src={thumb(project.image)} alt="" loading="lazy" decoding="async" width="320" height="180" />
+                <img src={thumb(project.image)} alt="" loading="eager" decoding="async" width="320" height="180" />
               ) : (
                 <span className={`mini-poster tone-${index % 3}`}>{project.poster}</span>
               )}
@@ -285,11 +319,16 @@ const Portfolio = () => {
         setReady(true);
         io.disconnect();
       },
-      { rootMargin: "240px" }
+      { rootMargin: "1400px" }
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
+  useEffect(() => {
+    const next = projects[(active + 1) % projects.length];
+    if (next.image) warm(shot(next.image));
+  }, [active]);
 
   useEffect(() => {
     if (!ready || paused || compact) return undefined;
@@ -320,20 +359,13 @@ const Portfolio = () => {
         onMouseLeave={() => setHovering(false)}
       >
         <div className="stage-frame">
-          <div className="stage-frame-inner" key={`visual-${active}`}>
+          <div className="stage-frame-inner">
             <div className="hud">
               <span>{String(active + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</span>
               <span>{project.place}</span>
             </div>
             {project.image ? (
-              <img
-                src={shot(project.image)}
-                alt={project.title}
-                decoding="async"
-                fetchPriority="high"
-                width="960"
-                height="540"
-              />
+              <StagePhoto file={project.image} title={project.title} />
             ) : (
               <div className={`poster tone-${active % 3}`}>
                 <strong>{project.poster}</strong>
@@ -382,7 +414,7 @@ const Portfolio = () => {
         </div>
       </div>
 
-      <Rail doubled={!compact} active={active} onPick={(index) => { setActive(index); setLocked(true); }} />
+      <Rail doubled active={active} onPick={(index) => { setActive(index); setLocked(true); }} />
       {!compact && (
         <Rail reverse doubled active={active} onPick={(index) => { setActive(index); setLocked(true); }} />
       )}

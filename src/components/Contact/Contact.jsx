@@ -39,7 +39,7 @@ const Contact = () => {
               GitHub
             </a>
           </div>
-          <div className="blur s-blur1" style={{ background: "#ec1839" }}></div>
+          <div className="blur s-blur1 tone-gold"></div>
         </div>
       </div>
       <div className="c-right">

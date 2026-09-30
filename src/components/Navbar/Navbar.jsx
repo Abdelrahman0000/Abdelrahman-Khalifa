@@ -21,18 +21,18 @@ const Navbar = () => {
         <div className="n-name">Kalefa</div>
         <Toggle />
       </div>
+      <div className="n-list">
+        <ul>
+          {links.map(([to, label]) => (
+            <li key={to}>
+              <Link activeClass="active" to={to} spy={true} smooth={true}>
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="n-right">
-        <div className="n-list">
-          <ul style={{ listStyleType: "none" }}>
-            {links.map(([to, label]) => (
-              <li key={to}>
-                <Link activeClass="active" to={to} spy={true} smooth={true}>
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
         <Link to="contact" spy={true} smooth={true}>
           <button className="button n-button">Contact</button>
         </Link>
