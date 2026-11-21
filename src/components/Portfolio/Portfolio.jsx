@@ -24,6 +24,16 @@ function warm(src) {
 
 const projects = [
   {
+    title: "Manga Reader",
+    url: "https://manga-reader-dun.vercel.app",
+    code: "https://github.com/Abdelrahman0000/Manga-Reader",
+    image: "manga-reader.webp",
+    place: "Lab",
+    tags: ["React", "Vite", "RTL"],
+    blurb:
+      "Arabic manga reader with RTL layout, lazy chapter loading, unread tracking, and per-chapter ZIP downloads over the MangaDex API.",
+  },
+  {
     title: "Reefna",
     url: "https://reefna.vercel.app/",
     code: "https://github.com/Abdelrahman0000/Reefna",
