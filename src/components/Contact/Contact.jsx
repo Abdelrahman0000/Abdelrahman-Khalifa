@@ -21,7 +21,7 @@ const Contact = () => {
           <span>Get in touch</span>
           <span>Let’s build it</span>
           <span>
-            United Arab Emirates · open to remote work across the region.
+            Egypt · open to remote work across the region.
           </span>
           <div className="c-meta">
             <a href="mailto:khlyftbdh5@gmail.com">khlyftbdh5@gmail.com</a>
