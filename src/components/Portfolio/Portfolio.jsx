@@ -221,7 +221,7 @@ const projects = [
     title: "Netflix UI",
     url: "https://nitflix-clone-three.vercel.app/",
     code: "https://github.com/Abdelrahman0000/nitflix-clone",
-    image: "p7.webp",
+    image: "nitflix-clone.webp",
     place: "Lab",
     tags: ["Rows", "Media"],
     blurb: "Streaming homepage study: hero, rows, and poster density.",
