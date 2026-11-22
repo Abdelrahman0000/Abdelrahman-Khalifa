@@ -215,7 +215,7 @@ const projects = [
     image: "instagram-clone.webp",
     place: "Demo",
     tags: ["React", "Supabase", "Real-time"],
-    blurb: "A full Instagram clone by Abdelrahman Samer Kalefa. Supabase-backed accounts, friends, posts, likes, comments, saves and real-time private chat, all seeded with fictional data.",
+    blurb: "An Instagram clone by Abdelrahman Samer Kalefa. Supabase-backed accounts, friends, posts, likes, comments, saves and real-time chat, all seeded with fictional demo data.",
   },
   {
     title: "Netflix UI",
