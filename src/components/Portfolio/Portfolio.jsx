@@ -219,8 +219,8 @@ const projects = [
   },
   {
     title: "Netflix UI",
-    url: "https://youthful-heisenberg-1b6a3a.netlify.app/",
-    code: "https://github.com/Abdelrahman0000/Nitflix",
+    url: "https://nitflix-clone-three.vercel.app/",
+    code: "https://github.com/Abdelrahman0000/nitflix-clone",
     image: "p7.webp",
     place: "Lab",
     tags: ["Rows", "Media"],
