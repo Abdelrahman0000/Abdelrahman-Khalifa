@@ -33,8 +33,10 @@ const projects = [
     code: "https://github.com/Abdelrahman0000/Parkink-plante-dashboard",
     image: "comfy-parking.webp",
     place: "Demo",
-    tags: ["React", "Supabase", "Realtime"],
-    blurb: "A parking dashboard for managing spaces, bookings and drivers. Try the demo with fictional data. Demo email: visitor@comfy.demo Demo password: TryParking2026",
+    tags: ["React", "Supabase", "Local demo"],
+    blurb: "A parking dashboard for managing spaces, bookings and drivers. Try the demo with fictional data.",
+    demoEmail: "visitor@comfy.demo",
+    demoPassword: "TryParking2026",
   },
   {
     title: "Manga Reader",
@@ -415,6 +417,7 @@ const Portfolio = () => {
           </div>
           <h2>{project.title}</h2>
           <p>{project.blurb}</p>
+          {project.demoEmail && <p style={{ fontSize: "0.86rem", lineHeight: 1.9 }}>Demo email: <code>{project.demoEmail}</code><br />Demo password: <code>{project.demoPassword}</code></p>}
           <div className="tags">
             {project.tags.map((tag) => (
               <span key={tag}>{tag}</span>
