@@ -210,12 +210,12 @@ const projects = [
   },
   {
     title: "Instagram Clone",
-    url: "https://instgrame.netlify.app/",
+    url: "https://instagram-clone-supabase.vercel.app/",
     code: "https://github.com/Abdelrahman0000/instegram-clone",
-    image: "p6.webp",
-    place: "Lab",
-    tags: ["Feed", "UI"],
-    blurb: "Social feed replica focused on posts, chrome, and mobile proportions.",
+    image: "instagram-clone.webp",
+    place: "Demo",
+    tags: ["React", "Supabase", "Real-time"],
+    blurb: "A full Instagram clone by Abdelrahman Samer Kalefa. Supabase-backed accounts, friends, posts, likes, comments, saves and real-time private chat, all seeded with fictional data.",
   },
   {
     title: "Netflix UI",
