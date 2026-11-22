@@ -12,7 +12,7 @@ const Footer = () => {
           <a href="mailto:khlyftbdh5@gmail.com">khlyftbdh5@gmail.com</a>
           <span> · </span>
           <a href="https://wa.me/201098253130">+20 109 825 3130</a>
-          <span> · UAE</span>
+          <span> · Egypt</span>
         </p>
         <div className="f-icons">
           <a href="https://github.com/Abdelrahman0000/" target="_blank" rel="noreferrer" aria-label="GitHub">
